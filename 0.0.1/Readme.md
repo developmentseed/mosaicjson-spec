@@ -3,8 +3,7 @@
 ## 1. Purpose
 
 This specification attempts to create a standard for representing
-metadata about mosaic of cloud optimized geotiff (COG) files, to aid clients
-in configuration and browsing.
+metadata about mosaic of cloud optimized geotiff (COG) files.
 
 ## 2. File format
 
@@ -74,11 +73,10 @@ as invalid and refuse operation.
     // determining a default location.
     "center": [ -76.275329586789, 39.153492567373, 8 ]
 
-    // REQUIRED.
-    // A dictionary of per quadkeys datasets.  
-    // Quadkey list MUST have `minzoom` as zoom and MUST be inside `bounds`.
-    // Each elements in quadkey list MUST be a string or a full url pointing to 
-    // a Cloud Optimized dataset.
+    // REQUIRED. A dictionary of per quadkey dataset in form of {quadkeys: [datasets]} pairs.
+    // Keys MUST be valid quadkeys index with zoom level equal to mosaic `minzoom`.
+    // Values MUST be arrays of strings (url or sceneid) pointing to a 
+    // Cloud Optimized dataset with bounds intersecting with the quadkey bounds.
     "tiles": {
         "030130": [
             "s3://my-bucket/dir/file1.tif",

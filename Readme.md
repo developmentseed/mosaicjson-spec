@@ -1,7 +1,7 @@
 ## MosaicJSON
 
 MosaicJSON is an open standard for representing
-metadata about mosaic of cloud optimized geotiff (COG) files
+metadata about mosaic of cloud optimized geotiff (COG) files.
 
 # License
 
