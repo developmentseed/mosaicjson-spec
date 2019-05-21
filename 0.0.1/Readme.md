@@ -3,19 +3,19 @@
 ## 1. Purpose
 
 This specification attempts to create a standard for representing
-metadata about mosaic of cloud optimized geotiff (COG) files, to aid clients
-in configuration and browsing.
+metadata about a mosaic of Cloud-Optimized GeoTIFF (COG) files.
 
 ## 2. File format
 
-MosaicJSON is intentionaly based on TileJSON specification and use the JSON format.
+MosaicJSON is intentionally based on the TileJSON specification and uses
+the JSON format.
 
 Implementations MUST treat unknown keys as if they weren't present.
 However, implementations MUST expose unknown key/values in their API
 so that API users can optionally handle these keys. Implementations MUST
 treat invalid values for keys as if they weren't present. If the key is
-required, implementations MUST treat the entire MosaicJSON manifest file
-as invalid and refuse operation.
+required and not valid or present, implementations MUST treat the entire
+MosaicJSON manifest file as invalid and refuse operation.
 
 
 ```javascript
@@ -74,11 +74,10 @@ as invalid and refuse operation.
     // determining a default location.
     "center": [ -76.275329586789, 39.153492567373, 8 ]
 
-    // REQUIRED.
-    // A dictionary of per quadkeys datasets.  
-    // Quadkey list MUST have `minzoom` as zoom and MUST be inside `bounds`.
-    // Each elements in quadkey list MUST be a string or a full url pointing to 
-    // a Cloud Optimized dataset.
+    // REQUIRED. A dictionary of per quadkey dataset in form of {quadkeys: [datasets]} pairs.
+    // Keys MUST be valid quadkeys index with zoom level equal to mosaic `minzoom`.
+    // Values MUST be arrays of strings (url or sceneid) pointing to a
+    // Cloud Optimized dataset with bounds intersecting with the quadkey bounds.
     "tiles": {
         "030130": [
             "s3://my-bucket/dir/file1.tif",
