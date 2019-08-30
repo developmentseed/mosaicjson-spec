@@ -1,0 +1,71 @@
+{
+  "mosaicjson": "0.0.2",
+  "name": "dg_post_idai",
+  "description": "Digitalglobe post Idai cyclone data.",
+  "version": "0.0.1",
+  "attribution": "(c) Digitalglobe",
+  "minzoom": 10,
+  "maxzoom": 18,
+  "bounds": [ 34.8046875, -20.3034175184893, 35.5078125, -19.31114335506464 ],
+  "center": [ 35.15625, -19.80728043677697, 10 ],
+  "tiles": {
+    "3001322011": [
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0201110.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0201111.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0201112.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0201113.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0210000.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0210002.tif"
+    ],
+    "3001322100": [
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0201113.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0210000.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0210001.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0210002.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0210003.tif"
+    ],
+    "3001322013": [
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023310.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023311.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023312.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023313.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023330.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023331.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023332.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023333.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032200.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032202.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032220.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032222.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0201110.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0201111.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0210000.tif"
+    ],
+    "3001322102": [
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023311.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023313.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023331.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023333.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032200.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032201.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032202.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032203.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032220.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032221.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032222.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032223.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0210000.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0210001.tif"
+    ],
+    "3001322031": [
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023310.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023311.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032200.tif"
+    ],
+    "3001322120": [
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0023311.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032200.tif",
+      "s3://opendata.remotepixel.ca/dg_post_idai/2019_03_20/0032201.tif"
+    ]
+  }
+}

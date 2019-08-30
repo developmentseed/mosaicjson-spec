@@ -1,0 +1,11 @@
+Changes
+=======
+
+0.0.2 (TBD)
+------------------
+- add `bounds` to the required key (#4)
+- add `quadkey_zoom` as optional key (#2)
+
+0.0.1 (2019-03-26)
+------------------
+- Initial release
