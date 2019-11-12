@@ -3,6 +3,16 @@
 MosaicJSON is an open standard for representing
 metadata about a mosaic of Cloud-Optimized GeoTIFF (COG) files.
 
+![](https://user-images.githubusercontent.com/10407788/68706772-7539ac00-055e-11ea-8c15-5ee4f30b143e.jpg)
+
+MosaicJSON can be seen as a Virtual raster (see GDAL's [VRT](https://gdal.org/drivers/raster/vrt.html)) enabling spatial and temporal processing for a list of Cloud-Optimized GeoTIFF.
+
+Official announcement: https://medium.com/devseed/cog-talk-part-2-mosaics-bbbf474e66df
+
+## Features
+- simple **JSON** format (enabling high ratio compression) 
+- **quadkey** based file index
+
 ## Implementations 
 - [cogeo-mosaic](https://github.com/developmentseed/cogeo-mosaic)
 
@@ -10,11 +20,17 @@ metadata about a mosaic of Cloud-Optimized GeoTIFF (COG) files.
 ## API Example
 <details>
 
-    ```python
+
+```python
     def fetch_mosaic_definition(url: Union[str, Path]) -> Dict:
         """Fetch mosaic definition file."""
         ...
         return mosaic_definition
+
+
+    def _fetch_and_find_asset(url: str, x: int, y: int, z: int):
+        mdef = fetch_mosaic_definition(url)
+        return get_assets(mdef, x: int, y: int, z: int)
 
 
     def get_assets(mosaic_definition: Dict, x: int, y: int, z: int) -> list[str]:
@@ -37,17 +53,10 @@ metadata about a mosaic of Cloud-Optimized GeoTIFF (COG) files.
             list of assets intersecting with the tile index. 
     
         """
-        def _fetch_and_find_asset(url: str, **args):
-            mdef = fetch_mosaic_definition(url)
-            return get_assets(mdef, **args)
-
-        min_zoom, max_zoom = mosaic_definition["minzoom"], mosaic_definition["maxzoom"]
-        if z > max_zoom or z < min_zoom:
-            return []  # return empty asset
+        min_zoom = mosaic_definition["minzoom"]
 
         mercator_tile = mercantile.Tile(x=x, y=y, z=z)
-        
-        quadkey_zoom = mosaic_definition.get("quadkey_zoom", min_zoom)
+        quadkey_zoom = mosaic_definition.get("quadkey_zoom", min_zoom)  # 0.0.2
 
         # get parent
         if mercator_tile.z > quadkey_zoom:
@@ -65,7 +74,6 @@ metadata about a mosaic of Cloud-Optimized GeoTIFF (COG) files.
 
             mercator_tiles = list(filter(lambda t: t.z == quadkey_zoom, mercator_tiles))
             quadkey = [mercantile.quadkey(*tile) for tile in mercator_tiles]
-
         else:
             quadkey = [mercantile.quadkey(*mercator_tile)]
 
@@ -79,14 +87,15 @@ metadata about a mosaic of Cloud-Optimized GeoTIFF (COG) files.
         return list(
             itertools.chain.from_iterable(
                 [
-                    _fetch_and_find_asset(asset, x, y, z)
-                    if asset.endswith(".json") or asset.endswith(".json.gz")
+                    fetch_and_find_assets(asset, x, y, z)
+                    if os.path.splitext(asset)[1] in [".json", ".gz"]
                     else [asset]
                     for asset in assets
                 ]
             )
         )
-    ```
+```
+
 </details>
 
 ## License
