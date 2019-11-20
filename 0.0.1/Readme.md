@@ -15,7 +15,7 @@ However, implementations MUST expose unknown key/values in their API
 so that API users can optionally handle these keys. Implementations MUST
 treat invalid values for keys as if they weren't present. If the key is
 required and not valid or present, implementations MUST treat the entire
-MosaicJSON manifest file as invalid and refuse operation.
+MosaicJSON manifest file as invalid and refuse the operation.
 
 
 ```javascript

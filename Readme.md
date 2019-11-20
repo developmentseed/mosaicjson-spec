@@ -14,8 +14,9 @@ Official announcement: https://medium.com/devseed/cog-talk-part-2-mosaics-bbbf47
 - **quadkey** based file index
 
 ## Implementations 
-- [cogeo-mosaic](https://github.com/developmentseed/cogeo-mosaic)
 
+![](https://user-images.githubusercontent.com/10407788/69247339-42a03c80-0b78-11ea-913a-e0e407576427.png)
+[cogeo-mosaic](https://github.com/developmentseed/cogeo-mosaic)
 
 ## API Example
 <details>
