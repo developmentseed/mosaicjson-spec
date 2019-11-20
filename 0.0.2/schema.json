@@ -1,0 +1,62 @@
+{
+    "name": "MosaicJSON",
+    "type": "object",
+    "properties": {
+        "mosaicjson": {
+            "type": "string",
+            "pattern": "\\d+\\.\\d+\\.\\d+\\w?[\\w\\d]*"
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "version": {
+            "type": "string",
+            "pattern": "\\d+\\.\\d+\\.\\d+\\w?[\\w\\d]*"
+        },
+        "attribution": {
+            "type": "string"
+        },
+        "minzoom": {
+            "minimum": 0,
+            "maximum": 30,
+            "type": "integer"
+        },
+        "maxzoom": {
+            "minimum": 0,
+            "maximum": 30,
+            "type": "integer"
+        },
+        "quadkey_zoom": {
+            "minimum": 0,
+            "maximum": 30,
+            "type": "integer"
+        },
+        "bounds": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "center": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "tiles": {
+            "type": "object",
+            "patternProperties": {
+                "[0-9]+": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "required": ["mosaicjson", "tiles", "minzoom", "maxzoom", "bounds"]
+}

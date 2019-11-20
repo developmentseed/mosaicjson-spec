@@ -1,4 +1,4 @@
-# MosaicJSON 0.0.1
+# MosaicJSON 0.0.2
 
 ## 1. Purpose
 
@@ -15,14 +15,14 @@ However, implementations MUST expose unknown key/values in their API
 so that API users can optionally handle these keys. Implementations MUST
 treat invalid values for keys as if they weren't present. If the key is
 required and not valid or present, implementations MUST treat the entire
-MosaicJSON manifest file as invalid and refuse the operation.
+MosaicJSON manifest file as invalid and refuse operation.
 
 
 ```javascript
 {
     // REQUIRED. A semver.org style version number. Describes the version of
     // the MosaicJSON spec that is implemented by this JSON object.
-    "mosaicjson": "0.0.1",
+    "mosaicjson": "0.0.2",
 
     // OPTIONAL. Default: null. A name describing the tileset. The name can
     // contain any legal character. Implementations SHOULD NOT interpret the
@@ -57,7 +57,15 @@ MosaicJSON manifest file as invalid and refuse the operation.
     // An integer specifying the maximum zoom level. MUST be >= minzoom.
     "maxzoom": 11,
 
-    // OPTIONAL. Default: [-180, -90, 180, 90].
+    // OPTIONAL.
+    // The zoom value for the quadkey index. MUST be =< maxzoom.
+    // If quadkey_zoom is > minzoom, then on each tile request from zoom between 
+    // minzoom and quadkey_zoom, the tiler will merge each quadkey asset lists.
+    // The use of quadkey_zoom can be beneficial when dealing with a high number
+    // of files and a large area.
+    "quadkey_zoom": 0,
+
+    // REQUIRED. Default: [-180, -90, 180, 90].
     // The maximum extent of available map tiles. Bounds MUST define an area
     // covered by all zoom levels. The bounds are represented in WGS:84
     // latitude and longitude values, in the order left, bottom, right, top.
@@ -76,7 +84,7 @@ MosaicJSON manifest file as invalid and refuse the operation.
 
     // REQUIRED. A dictionary of per quadkey dataset in form of {quadkeys: [datasets]} pairs.
     // Keys MUST be valid quadkeys index with zoom level equal to mosaic `minzoom`.
-    // Values MUST be arrays of strings (url or sceneid) pointing to a
+    // Values MUST be arrays of strings (url or sceneid) pointing to a 
     // Cloud Optimized dataset with bounds intersecting with the quadkey bounds.
     "tiles": {
         "030130": [
