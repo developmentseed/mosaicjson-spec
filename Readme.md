@@ -1,4 +1,4 @@
-## MosaicJSON
+![](https://user-images.githubusercontent.com/10407788/72360020-5a4dfa00-36bd-11ea-9fdd-18ddf51693b8.png)
 
 MosaicJSON is an open standard for representing
 metadata about a mosaic of Cloud-Optimized GeoTIFF (COG) files.
