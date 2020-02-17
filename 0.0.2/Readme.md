@@ -83,7 +83,7 @@ MosaicJSON manifest file as invalid and refuse operation.
     "center": [ -76.275329586789, 39.153492567373, 8 ]
 
     // REQUIRED. A dictionary of per quadkey dataset in form of {quadkeys: [datasets]} pairs.
-    // Keys MUST be valid quadkeys index with zoom level equal to mosaic `minzoom`.
+    // Keys MUST be valid quadkeys index with zoom level equal to mosaic `minzoom` (or `quadkey_zoom` if present).
     // Values MUST be arrays of strings (url or sceneid) pointing to a 
     // Cloud Optimized dataset with bounds intersecting with the quadkey bounds.
     "tiles": {
