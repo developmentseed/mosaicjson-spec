@@ -99,12 +99,12 @@ MosaicJSON manifest file as invalid and refuse operation.
 
     // OPTIONAL. Default: null.
     // Asset's datatype info.
-    "dtype": "uint8",
+    "data_type": "uint8",
 
     // OPTIONAL. Default: null.
-    // Tuple of indexes.
+    // List of indexes.
     // examples: (band1, band2, band3); (1, 2, 3); (red, green, blue)
-    "indexes": (1, 2, 3, 4),
+    "indexes": [1, 2, 3, 4],
 
     // OPTIONAL. Default: null.
     "band_descriptions": [(1, ""), (2, ""), (3, ""), (4, "")],

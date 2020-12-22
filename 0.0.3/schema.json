@@ -56,6 +56,50 @@
                     }
                 }
             }
+        },
+        "asset_type": {
+            "type": "string"
+        },
+        "data_type": {
+            "type": "string"
+        },
+        "indexes": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+                "oneOf": [
+                    {"type": "number"},
+                    {"type": "str"}
+                ]
+            }
+        },
+        "band_descriptions": {
+            "type": "array",
+            "items": {
+                "type": "array",
+                "items": [
+                    {
+                        "oneOf": [
+                            {"type": "number"},
+                            {"type": "str"}
+                        ]
+                    },
+                    {
+                        "type": "str"
+                    }
+                ]
+            }
+        },
+        "colormap": {
+            "type": "object",
+            "patternProperties": {
+                "^[0-9_]+$": {
+                    "type": "array",
+                    "items": {"type": "number"},
+                    "minItems": 4,
+                    "maxItems": 4
+                }
+            }
         }
     },
     "required": ["mosaicjson", "tiles", "minzoom", "maxzoom", "bounds"]
