@@ -88,14 +88,18 @@ MosaicJSON manifest file as invalid and refuse operation.
     // asset with bounds intersecting with the quadkey bounds.
     "tiles": {
         "030130": [
-            "s3://my-bucket/dir/file1.tif",
-            "s3://my-bucket/dir/file2.tif",
+            "file1.tif",
+            "file2.tif",
         ]
     },
 
     // OPTIONAL. Default: null.
     // A string describing the type of the asset found in `tiles`.
     "asset_type": "COG",
+
+    // OPTIONAL. Default: null.
+    // A string describing the prefix to add to the asset string.
+    "asset_prefix": "http://hostname.io/cog/",
 
     // OPTIONAL. Default: null.
     // Asset's datatype info.

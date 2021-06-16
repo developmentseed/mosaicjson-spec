@@ -60,6 +60,9 @@
         "asset_type": {
             "type": "string"
         },
+        "asset_prefix": {
+            "type": "string"
+        },
         "data_type": {
             "type": "string",
             "oneOf": [
