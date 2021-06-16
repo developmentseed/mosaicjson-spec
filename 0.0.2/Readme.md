@@ -80,7 +80,7 @@ MosaicJSON manifest file as invalid and refuse operation.
     // Implementations can use this value to set the default location. If the
     // value is null, implementations may use their own algorithm for
     // determining a default location.
-    "center": [ -76.275329586789, 39.153492567373, 8 ]
+    "center": [ -76.275329586789, 39.153492567373, 8 ],
 
     // REQUIRED. A dictionary of per quadkey dataset in form of {quadkeys: [datasets]} pairs.
     // Keys MUST be valid quadkeys index with zoom level equal to mosaic `minzoom` (or `quadkey_zoom` if present).
