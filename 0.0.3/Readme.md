@@ -80,12 +80,12 @@ MosaicJSON manifest file as invalid and refuse operation.
     // Implementations can use this value to set the default location. If the
     // value is null, implementations may use their own algorithm for
     // determining a default location.
-    "center": [ -76.275329586789, 39.153492567373, 8 ]
+    "center": [ -76.275329586789, 39.153492567373, 8 ],
 
-    // REQUIRED. A dictionary of per quadkey dataset in form of {quadkeys: [datasets]} pairs.
+    // REQUIRED. A dictionary of per quadkey assets in form of {quadkeys: [asset]} pairs.
     // Keys MUST be valid quadkeys index with zoom level equal to mosaic `minzoom` (or `quadkey_zoom` if present).
-    // Values MUST be arrays of strings (url or sceneid) pointing to a
-    // Cloud Optimized dataset with bounds intersecting with the quadkey bounds.
+    // Values MUST be arrays of strings (url or sceneid) pointing to an
+    // asset with bounds intersecting with the quadkey bounds.
     "tiles": {
         "030130": [
             "s3://my-bucket/dir/file1.tif",
@@ -94,23 +94,33 @@ MosaicJSON manifest file as invalid and refuse operation.
     },
 
     // OPTIONAL. Default: null.
-    // A string describing the type of the asset.
+    // A string describing the type of the asset found in `tiles`.
     "asset_type": "COG",
 
     // OPTIONAL. Default: null.
     // Asset's datatype info.
+    // One of:
+    // int8: 8-bit integer
+    // int16: 16-bit integer
+    // int32: 32-bit integer
+    // int64: 64-bit integer
+    // uint8: unsigned 8-bit integer (common for 8-bit RGB PNG's)
+    // uint16: unsigned 16-bit integer
+    // uint32: unsigned 32-bit integer
+    // uint64: unsigned 64-bit integer
+    // float16: 16-bit float
+    // float32: 32-bit float
+    // float64: 64-big float
+    // cint16: 16-bit complex integer
+    // cint32: 32-bit complex integer
+    // cfloat32: 32-bit complex float
+    // cfloat64: 64-bit complex float
+    // other: Other data type than the ones listed above (e.g. boolean, string, higher precision numbers)
     "data_type": "uint8",
 
     // OPTIONAL. Default: null.
-    // List of indexes.
-    // examples: (band1, band2, band3); (1, 2, 3); (red, green, blue)
-    "indexes": [1, 2, 3, 4],
-
-    // OPTIONAL. Default: null.
-    "band_descriptions": [(1, ""), (2, ""), (3, ""), (4, "")],
-
-    // OPTIONAL. Default: null.
     // GDAL like colormap in form of {key: [r, g, b, a], ...}
-    "colormap": {},
+    // In GDAL
+    "colormap": {}
 }
 ```

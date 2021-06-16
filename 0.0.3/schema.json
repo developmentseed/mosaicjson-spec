@@ -49,7 +49,7 @@
         "tiles": {
             "type": "object",
             "patternProperties": {
-                "[0-9]+": {
+                "[0123]{1,30}": {
                     "type": "array",
                     "items": {
                         "type": "string"
@@ -61,39 +61,30 @@
             "type": "string"
         },
         "data_type": {
-            "type": "string"
-        },
-        "indexes": {
-            "type": "array",
-            "uniqueItems": true,
-            "items": {
-                "oneOf": [
-                    {"type": "number"},
-                    {"type": "str"}
-                ]
-            }
-        },
-        "band_descriptions": {
-            "type": "array",
-            "items": {
-                "type": "array",
-                "items": [
-                    {
-                        "oneOf": [
-                            {"type": "number"},
-                            {"type": "str"}
-                        ]
-                    },
-                    {
-                        "type": "str"
-                    }
-                ]
-            }
+            "type": "string",
+            "oneOf": [
+                "int8",
+                "int16",
+                "int32",
+                "int64",
+                "uint8",
+                "uint16",
+                "uint32",
+                "uint64",
+                "float16",
+                "float32",
+                "float64",
+                "cint16",
+                "cint32",
+                "cfloat32",
+                "cfloat64",
+                "other"
+            ]
         },
         "colormap": {
             "type": "object",
             "patternProperties": {
-                "^[0-9_]+$": {
+                "^[0-9]+$": {
                     "type": "array",
                     "items": {"type": "number"},
                     "minItems": 4,
