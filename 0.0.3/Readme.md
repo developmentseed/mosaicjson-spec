@@ -18,7 +18,7 @@ required and not valid or present, implementations MUST treat the entire
 MosaicJSON manifest file as invalid and refuse operation.
 
 
-```javascript
+```json
 {
     // REQUIRED. A semver.org style version number. Describes the version of
     // the MosaicJSON spec that is implemented by this JSON object.
@@ -125,6 +125,23 @@ MosaicJSON manifest file as invalid and refuse operation.
     // OPTIONAL. Default: null.
     // GDAL like colormap in form of {key: [r, g, b, a], ...}
     // In GDAL
-    "colormap": {}
+    "colormap": {},
+
+    // OPTIONAL. Default: null.
+    // TileMatrixSet definition.
+    // One or:
+    // - Identifier string (which will be interpreted by the application)
+    // - TMS URL (e.g. https://raw.githubusercontent.com/developmentseed/morecantile/3.3.0/morecantile/data/WebMercatorQuad.json)
+    // - TMS document
+    // - TMS definition parameters (identifier + crs + extent + ...)
+    // as defined in https://developmentseed.org/morecantile/usage/#define-custom-grid.
+    "TileMatrixSet": {
+        "identifier": "WebMercatorQuad",
+        "extent": [0, 0, 100, 100],
+        "crs": "epsg:32132",
+        "tile_width": 256,
+        "tile_height": 256,
+        "matrix_scale": [1, 1]
+    }
 }
 ```
