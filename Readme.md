@@ -10,10 +10,10 @@ MosaicJSON can be seen as a Virtual raster (see GDAL's [VRT](https://gdal.org/dr
 Official announcement: https://medium.com/devseed/cog-talk-part-2-mosaics-bbbf474e66df
 
 ## Features
-- simple **JSON** format (enabling high ratio compression) 
+- simple **JSON** format (enabling high ratio compression)
 - **quadkey** based file index
 
-## Implementations 
+## Implementations
 
 ![](https://user-images.githubusercontent.com/10407788/69247339-42a03c80-0b78-11ea-913a-e0e407576427.png)
 [cogeo-mosaic](https://github.com/developmentseed/cogeo-mosaic)
@@ -36,7 +36,7 @@ Official announcement: https://medium.com/devseed/cog-talk-part-2-mosaics-bbbf47
 
     def get_assets(mosaic_definition: Dict, x: int, y: int, z: int) -> list[str]:
         """Get asset list for a Z/X/Y index and a mosaic definition.
-        
+
         Parameters
         ----------
         mosaic_definition : dict
@@ -51,8 +51,8 @@ Official announcement: https://medium.com/devseed/cog-talk-part-2-mosaics-bbbf47
         Returns
         -------
         assets : list
-            list of assets intersecting with the tile index. 
-    
+            list of assets intersecting with the tile index.
+
         """
         min_zoom = mosaic_definition["minzoom"]
 
