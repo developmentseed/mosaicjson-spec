@@ -281,3 +281,25 @@ TileMatrixSet used for the `quadkey` definition. The TMS document should be comp
   }
 }
 ```
+
+## 3.17 `layers`
+
+OPTIONAL. Object.
+
+A set of `layer` configurations. Implementations MAY use the entries to define a set of available `layers` and use the configuration to create tiles.
+
+```JSON
+{
+  "layers": {
+    "true_color": {
+      "bidx": ["b1", "b2", "b3"],
+      "color_formula": "Gamma RGB 3.5 Saturation 1.7 Sigmoidal RGB 15 0.35",
+    },
+    "ndvi": {
+      "expression": "(b4-b1)/(b4+b1)",
+      "rescale": "-1,1",
+      "colormap_name": "viridis"
+    }
+  }
+}
+```

@@ -98,6 +98,10 @@
         "tilematrixset": {
             "description": "Tile matrix set definition",
             "$ref": "https://raw.githubusercontent.com/opengeospatial/2D-Tile-Matrix-Set/master/schemas/tms/2.0/json/tileMatrixSet.json"
+        },
+        "layers": {
+            "description": "A set of `layer` configurations",
+            "type": "object"
         }
     },
     "required": ["mosaicjson", "tiles", "minzoom", "maxzoom", "bounds"]
