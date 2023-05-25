@@ -129,19 +129,44 @@ MosaicJSON manifest file as invalid and refuse operation.
 
     // OPTIONAL. Default: null.
     // TileMatrixSet definition.
-    // One or:
-    // - Identifier string (which will be interpreted by the application)
-    // - TMS URL (e.g. https://raw.githubusercontent.com/developmentseed/morecantile/3.3.0/morecantile/data/WebMercatorQuad.json)
-    // - TMS document
-    // - TMS definition parameters (identifier + crs + extent + ...)
-    // as defined in https://developmentseed.org/morecantile/usage/#define-custom-grid.
-    "TileMatrixSet": {
-        "identifier": "WebMercatorQuad",
-        "extent": [0, 0, 100, 100],
-        "crs": "epsg:32132",
-        "tile_width": 256,
-        "tile_height": 256,
-        "matrix_scale": [1, 1]
+    "tilematrixset": {
+        "title": "LINZ NZTM2000Quad Map Tile Grid",
+        "abstract": "See https://github.com/linz/NZTM2000TileMatrixSet",
+        "id": "NZTM2000Quad",
+        "crs": "urn:ogc:def:crs:EPSG::2193",
+        "orderedAxes": [
+            "Y",
+            "X"
+        ],
+        "tileMatrices": [
+            {
+                "id": "0",
+                "scaleDenominator": 139770566.007179,
+                "pointOfOrigin": [
+                    10438190.1652,
+                    -3260586.7284
+                ],
+                "tileWidth": 256,
+                "tileHeight": 256,
+                "matrixWidth": 1,
+                "matrixHeight": 1,
+                "cellSize": 39135.75848201011
+            },
+            ...
+            {
+                "id": "21",
+                "scaleDenominator": 66.64779949530553,
+                "pointOfOrigin": [
+                    10438190.1652,
+                    -3260586.7284
+                ],
+                "tileWidth": 256,
+                "tileHeight": 256,
+                "matrixWidth": 2097152,
+                "matrixHeight": 2097152,
+                "cellSize": 0.018661383858685546
+            }
+        ]
     }
 }
 ```
