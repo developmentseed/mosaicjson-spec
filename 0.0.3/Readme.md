@@ -18,7 +18,7 @@ required and not valid or present, implementations MUST treat the entire
 MosaicJSON manifest file as invalid and refuse operation.
 
 
-```javascript
+```json
 {
     // REQUIRED. A semver.org style version number. Describes the version of
     // the MosaicJSON spec that is implemented by this JSON object.
@@ -125,6 +125,48 @@ MosaicJSON manifest file as invalid and refuse operation.
     // OPTIONAL. Default: null.
     // GDAL like colormap in form of {key: [r, g, b, a], ...}
     // In GDAL
-    "colormap": {}
+    "colormap": {},
+
+    // OPTIONAL. Default: null.
+    // TileMatrixSet definition.
+    "tilematrixset": {
+        "title": "LINZ NZTM2000Quad Map Tile Grid",
+        "abstract": "See https://github.com/linz/NZTM2000TileMatrixSet",
+        "id": "NZTM2000Quad",
+        "crs": "urn:ogc:def:crs:EPSG::2193",
+        "orderedAxes": [
+            "Y",
+            "X"
+        ],
+        "tileMatrices": [
+            {
+                "id": "0",
+                "scaleDenominator": 139770566.007179,
+                "pointOfOrigin": [
+                    10438190.1652,
+                    -3260586.7284
+                ],
+                "tileWidth": 256,
+                "tileHeight": 256,
+                "matrixWidth": 1,
+                "matrixHeight": 1,
+                "cellSize": 39135.75848201011
+            },
+            ...
+            {
+                "id": "21",
+                "scaleDenominator": 66.64779949530553,
+                "pointOfOrigin": [
+                    10438190.1652,
+                    -3260586.7284
+                ],
+                "tileWidth": 256,
+                "tileHeight": 256,
+                "matrixWidth": 2097152,
+                "matrixHeight": 2097152,
+                "cellSize": 0.018661383858685546
+            }
+        ]
+    }
 }
 ```

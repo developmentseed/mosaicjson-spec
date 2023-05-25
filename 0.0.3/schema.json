@@ -65,7 +65,7 @@
         },
         "data_type": {
             "type": "string",
-            "oneOf": [
+            "enum": [
                 "int8",
                 "int16",
                 "int32",
@@ -94,6 +94,10 @@
                     "maxItems": 4
                 }
             }
+        },
+        "tilematrixset": {
+            "description": "Tile matrix set definition",
+            "$ref": "https://raw.githubusercontent.com/opengeospatial/2D-Tile-Matrix-Set/master/schemas/tms/2.0/json/tileMatrixSet.json"
         }
     },
     "required": ["mosaicjson", "tiles", "minzoom", "maxzoom", "bounds"]
