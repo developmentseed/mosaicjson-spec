@@ -18,7 +18,7 @@ required and not valid or present, implementations MUST treat the entire
 MosaicJSON manifest file as invalid and refuse operation.
 
 
-```json
+```js
 {
     // REQUIRED. A semver.org style version number. Describes the version of
     // the MosaicJSON spec that is implemented by this JSON object.
