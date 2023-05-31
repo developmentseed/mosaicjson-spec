@@ -114,7 +114,7 @@ def get_assets(mosaic_definition: Dict, x: int, y: int, z: int) -> list[str]:
 ## License
 
 The text of this specification is licensed under the
-[MIT License](https://github.com/developmentseed/mosaicjson-spec/blob/master/LICENSE).
+[MIT License](https://github.com/developmentseed/mosaicjson-spec/blob/main/LICENSE).
 The use of this spec in products and code is entirely free:
 there are no royalties, restrictions, or requirements.
 
