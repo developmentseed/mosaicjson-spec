@@ -1,0 +1,108 @@
+{
+    "name": "MosaicJSON",
+    "type": "object",
+    "properties": {
+        "mosaicjson": {
+            "type": "string",
+            "pattern": "\\d+\\.\\d+\\.\\d+\\w?[\\w\\d]*"
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "version": {
+            "type": "string",
+            "pattern": "\\d+\\.\\d+\\.\\d+\\w?[\\w\\d]*"
+        },
+        "attribution": {
+            "type": "string"
+        },
+        "minzoom": {
+            "minimum": 0,
+            "maximum": 30,
+            "type": "integer"
+        },
+        "maxzoom": {
+            "minimum": 0,
+            "maximum": 30,
+            "type": "integer"
+        },
+        "quadkey_zoom": {
+            "minimum": 0,
+            "maximum": 30,
+            "type": "integer"
+        },
+        "bounds": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "center": {
+            "type": "array",
+            "items": {
+                "type": "number"
+            }
+        },
+        "tiles": {
+            "type": "object",
+            "patternProperties": {
+                "[0123]{1,30}": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "asset_type": {
+            "type": "string"
+        },
+        "asset_prefix": {
+            "type": "string"
+        },
+        "data_type": {
+            "type": "string",
+            "enum": [
+                "int8",
+                "int16",
+                "int32",
+                "int64",
+                "uint8",
+                "uint16",
+                "uint32",
+                "uint64",
+                "float16",
+                "float32",
+                "float64",
+                "cint16",
+                "cint32",
+                "cfloat32",
+                "cfloat64",
+                "other"
+            ]
+        },
+        "colormap": {
+            "type": "object",
+            "patternProperties": {
+                "^[0-9]+$": {
+                    "type": "array",
+                    "items": {"type": "number"},
+                    "minItems": 4,
+                    "maxItems": 4
+                }
+            }
+        },
+        "tilematrixset": {
+            "description": "Tile matrix set definition",
+            "$ref": "https://raw.githubusercontent.com/opengeospatial/2D-Tile-Matrix-Set/master/schemas/tms/2.0/json/tileMatrixSet.json"
+        },
+        "layers": {
+            "description": "A set of `layer` configurations",
+            "type": "object"
+        }
+    },
+    "required": ["mosaicjson", "tiles", "minzoom", "maxzoom", "bounds"]
+}
