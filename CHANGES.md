@@ -1,4 +1,4 @@
-# 0.0.3 (TBD)
+# 0.0.3 (2023-05-31)
 
 - add `asset_type` to describe the type of asset (e.g COG or STAC)
 - add `asset_prefix` to use to construct a full asset url
