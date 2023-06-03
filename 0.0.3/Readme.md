@@ -71,7 +71,7 @@ A [semver.org](https://semver.org/) style version number of the tiles. When chan
 
 ## 3.5 `attribution`
 
-OPTIONAL. String. Default: "1.0.0".
+OPTIONAL. String. Default: null.
 
 Contains an attribution to be displayed when the map is shown to a user. Implementations MAY decide to treat this as HTML or literal text. For security reasons, make absolutely sure that this content can't be abused as a vector for XSS or beacon tracking.
 
